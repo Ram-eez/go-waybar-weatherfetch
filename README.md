@@ -1,6 +1,7 @@
 # Weather API for Waybar
 
-![Weather Module Preview](https://github.com/user-attachments/assets/39f6591e-b384-4e44-96e1-4f34492e9a9a)
+![Weather Module Preview]![image](https://github.com/user-attachments/assets/98a89e00-a82f-42e9-b91b-30245ddd4496)
+
 
 This script fetches weather data from [WeatherAPI](https://www.weatherapi.com/) and displays it in Waybar.
 
