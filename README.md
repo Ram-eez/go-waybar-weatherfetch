@@ -1,7 +1,6 @@
 # Weather API for Waybar
 
-![Weather Module Preview]![image](https://github.com/user-attachments/assets/98a89e00-a82f-42e9-b91b-30245ddd4496)
-
+![image](https://github.com/user-attachments/assets/4ce5f758-ff84-40a3-b5f3-b3d32024131c)
 
 This script fetches weather data from [WeatherAPI](https://www.weatherapi.com/) and displays it in Waybar.
 
@@ -9,6 +8,12 @@ This script fetches weather data from [WeatherAPI](https://www.weatherapi.com/) 
 
 ### 1. Get Your API Key
 Register at [WeatherAPI](https://www.weatherapi.com/) to obtain your free API key.
+
+Add the key in main.go
+
+```go
+   apiKey := "your_apikey_from_www.weatherapi.com"
+```
 
 ### 2. Configure Waybar
 Add the following entry to your Waybar configuration file (typically `~/.config/waybar/config.json`):
