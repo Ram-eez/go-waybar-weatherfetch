@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -16,7 +17,7 @@ type WeatherResponse struct {
 	} `json:"location"`
 
 	Current struct {
-		TempCurrent string `json:"temp_c"`
+		TempCurrent float64 `json:"temp_c"`
 	} `json:"current"`
 }
 
@@ -26,7 +27,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	apiKey := os.Getenv("API_KEY")
 
 	url := fmt.Sprintf("http://api.weatherapi.com/v1/current.json?key=%s&q=Srinagar&aqi=yes", apiKey)
@@ -40,5 +40,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(string(weatherData))
+	// fmt.Println("Raw Response:", string(weatherData))
+
+	var weather WeatherResponse
+	if err := json.Unmarshal(weatherData, &weather); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(weather.Location.Name, weather.Current.TempCurrent)
 }
